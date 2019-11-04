@@ -10,7 +10,7 @@ namespace TrainingManagementSystem.Repositories.Base
 {
     public abstract class BaseRepository<T> :IRepository<T> where T:class
     {
-        protected DbContext db;
+        private DbContext db;
 
         public BaseRepository(DbContext db)
         {

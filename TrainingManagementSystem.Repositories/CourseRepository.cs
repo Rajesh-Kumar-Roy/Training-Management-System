@@ -11,8 +11,12 @@ namespace TrainingManagementSystem.Repositories
 {
     public class CourseRepository : BaseRepository<Course>, ICourseRepository
     {
-        
+        private DbContext db;
 
+        public TrainingDbContext Context
+        {
+            get { return (TrainingDbContext) db; }
+        }
         public CourseRepository(DbContext db) : base(db)
         {
 

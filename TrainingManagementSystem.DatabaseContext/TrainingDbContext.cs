@@ -8,11 +8,20 @@ namespace TrainingManagementSystem.DatabaseContext
 {
     public class TrainingDbContext:DbContext
     {
+        public TrainingDbContext()
+        {
+            
+        }
         public DbSet<Course> Courses { get; set; }
 
          protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
          {
-             optionsBuilder.UseSqlServer("Server=(local);Database=TrainingDb;Integrated Security=true");
+             optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=TrainingDb11;Integrated Security=true");
+         }
+
+         protected override void OnModelCreating(ModelBuilder modelBuilder)
+         {
+             base.OnModelCreating(modelBuilder);
          }
     }
 }
